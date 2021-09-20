@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://lemonmagic.github.io/about/index.html</loc>
+    
+    <lastmod>2021-09-20</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://lemonmagic.github.io/Computer%20Graphics/lab00/</loc>
     
     <lastmod>2021-09-20</lastmod>
@@ -9,14 +16,14 @@
   </url>
   
   <url>
-    <loc>https://lemonmagic.github.io/Computer%20Graphics/Computer%20Graphics%20Test/</loc>
+    <loc>https://lemonmagic.github.io/Computer%20Graphics/index/</loc>
     
     <lastmod>2021-09-19</lastmod>
     
   </url>
   
   <url>
-    <loc>https://lemonmagic.github.io/Computer%20Graphics/index/</loc>
+    <loc>https://lemonmagic.github.io/Computer%20Graphics/Computer%20Graphics%20Test/</loc>
     
     <lastmod>2021-09-19</lastmod>
     
@@ -75,13 +82,6 @@
     <loc>https://lemonmagic.github.io/archive/index.html</loc>
     
     <lastmod>2017-03-20</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lemonmagic.github.io/about/index.html</loc>
-    
-    <lastmod>2016-04-20</lastmod>
     
   </url>
   
