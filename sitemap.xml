@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://lemonmagic.github.io/cn/Computer%20Graphics/lab01/</loc>
+    
+    <lastmod>2021-09-27</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lemonmagic.github.io/cn/Computer%20Graphics/lab01/Lab01/</loc>
+    
+    <lastmod>2021-09-27</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lemonmagic.github.io/cn/Node.js/Nodejs/</loc>
+    
+    <lastmod>2021-09-21</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://lemonmagic.github.io/about/index.html</loc>
     
     <lastmod>2021-09-20</lastmod>
@@ -9,35 +30,14 @@
   </url>
   
   <url>
-    <loc>https://lemonmagic.github.io/Computer%20Graphics/lab00/</loc>
+    <loc>https://lemonmagic.github.io/cn/Computer%20Graphics/lab00/</loc>
     
     <lastmod>2021-09-20</lastmod>
     
   </url>
   
   <url>
-    <loc>https://lemonmagic.github.io/Computer%20Graphics/Computer%20Graphics%20Test/</loc>
-    
-    <lastmod>2021-09-19</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lemonmagic.github.io/Computer%20Graphics/index/</loc>
-    
-    <lastmod>2021-09-19</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lemonmagic.github.io/TestFile/TestDocument2/</loc>
-    
-    <lastmod>2021-09-19</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lemonmagic.github.io/TestFile/TestDocument/</loc>
+    <loc>https://lemonmagic.github.io/cn/Computer%20Graphics/index/</loc>
     
     <lastmod>2021-09-19</lastmod>
     
@@ -65,14 +65,14 @@
   </url>
   
   <url>
-    <loc>https://lemonmagic.github.io/en/Hexo-Theme-LiveMyLife/</loc>
+    <loc>https://lemonmagic.github.io/en/Hexo/Hexo-Theme-LiveMyLife/</loc>
     
     <lastmod>2020-04-16</lastmod>
     
   </url>
   
   <url>
-    <loc>https://lemonmagic.github.io/cn/Hexo-Theme-LiveMyLife/</loc>
+    <loc>https://lemonmagic.github.io/cn/Hexo/Hexo-Theme-LiveMyLife/</loc>
     
     <lastmod>2020-04-16</lastmod>
     
@@ -88,29 +88,36 @@
 
   <url>
     <loc>https://lemonmagic.github.io/</loc>
-    <lastmod>2021-09-20</lastmod>
+    <lastmod>2021-09-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
+    <loc>https://lemonmagic.github.io/tags/Hexo/</loc>
+    <lastmod>2021-09-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lemonmagic.github.io/tags/Theme-LiveMyLife/</loc>
+    <lastmod>2021-09-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://lemonmagic.github.io/tags/Computer-Graphics/</loc>
-    <lastmod>2021-09-20</lastmod>
+    <lastmod>2021-09-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://lemonmagic.github.io/tags/TestCategories/</loc>
-    <lastmod>2021-09-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lemonmagic.github.io/tags/Hexo-Theme-LiveMyLife/</loc>
-    <lastmod>2021-09-20</lastmod>
+    <loc>https://lemonmagic.github.io/tags/Node-js/</loc>
+    <lastmod>2021-09-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -118,22 +125,22 @@
 
   
   <url>
+    <loc>https://lemonmagic.github.io/categories/Hexo/</loc>
+    <lastmod>2021-09-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://lemonmagic.github.io/categories/Computer-Graphics/</loc>
-    <lastmod>2021-09-20</lastmod>
+    <lastmod>2021-09-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://lemonmagic.github.io/categories/TestCategories/</loc>
-    <lastmod>2021-09-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lemonmagic.github.io/categories/Hexo-Theme-LiveMyLife/</loc>
-    <lastmod>2021-09-20</lastmod>
+    <loc>https://lemonmagic.github.io/categories/Node-js/</loc>
+    <lastmod>2021-09-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

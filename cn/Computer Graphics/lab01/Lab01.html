@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)https://liyi1003zcmu.github.io/demos/chap1-demo-1.html -->
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<title>Chapter 1. First WebGL Demo</title>
+	<!-- 顶点着色器和片元着色器代码 -->
+	<script id="vertex-shader" type="x-shader/x-vertex">
+			attribute vec4 vPosition;
+			void main(){
+				gl_Position = vPosition;
+			}
+		</script>
+	<script id="fragment-shader" type="x-shader/x-fragment">
+			precision mediump float;
+			void main(){
+				gl_FragColor = vec4( 0.0, 0.0, 1.0, 1.0 );
+			}
+		</script>
+		</script>
+	<!-- 一组相关的JS库 -->
+	<script type="text/javascript" src="./Chapter 1. First WebGL Demo_files/webgl-utils.js"></script>
+	<script type="text/javascript" src="./Chapter 1. First WebGL Demo_files/initShaders.js"></script>
+	<script type="text/javascript" src="./Chapter 1. First WebGL Demo_files/gl-matrix-min.js"></script>
+	<!-- 绘制三角形的JS代码 -->
+	<!-- <script type="text/javascript" src="./Chapter 1. First WebGL Demo_files/triangle.js"></script> -->
+	<!-- <script type="text/javascript" src="./Chapter 1. First WebGL Demo_files/square.js"></script> -->
+	<script src="./Chapter 1. First WebGL Demo_files/tri_squ1.js"></script>
+</head>
+
+<body>
+	<!-- <canvas id="triangle-canvas" style="border:none;" width="500" height="500"></canvas>
+	<canvas id="square-canvas" style="border: none;" width="500" height="500"></canvas> -->
+	<canvas id="tri_squ-canvas" style="border: none;" width="500" height="500"></canvas>
+</body>
+
+</html>
