@@ -81,7 +81,7 @@
 
   <url>
     <loc>https://lemonmagic.github.io/</loc>
-    <lastmod>2021-09-27</lastmod>
+    <lastmod>2021-10-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -89,28 +89,28 @@
   
   <url>
     <loc>https://lemonmagic.github.io/tags/Computer-Graphics/</loc>
-    <lastmod>2021-09-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lemonmagic.github.io/tags/Hexo/</loc>
-    <lastmod>2021-09-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lemonmagic.github.io/tags/Theme-LiveMyLife/</loc>
-    <lastmod>2021-09-27</lastmod>
+    <lastmod>2021-10-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lemonmagic.github.io/tags/Node-js/</loc>
-    <lastmod>2021-09-27</lastmod>
+    <lastmod>2021-10-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lemonmagic.github.io/tags/Hexo/</loc>
+    <lastmod>2021-10-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lemonmagic.github.io/tags/Theme-LiveMyLife/</loc>
+    <lastmod>2021-10-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -119,21 +119,21 @@
   
   <url>
     <loc>https://lemonmagic.github.io/categories/Computer-Graphics/</loc>
-    <lastmod>2021-09-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://lemonmagic.github.io/categories/Hexo/</loc>
-    <lastmod>2021-09-27</lastmod>
+    <lastmod>2021-10-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lemonmagic.github.io/categories/Node-js/</loc>
-    <lastmod>2021-09-27</lastmod>
+    <lastmod>2021-10-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://lemonmagic.github.io/categories/Hexo/</loc>
+    <lastmod>2021-10-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
