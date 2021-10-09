@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <title>Chap2 Demo</title>
+  <script id="vertex-shader" type="x-shader/x-vertex">
+	attribute vec3 vPosition;
+	attribute vec4 vColor;
+	varying vec4 fColor;
+
+	void main(){
+		gl_Position = vec4( vPosition, 1.0 );
+		fColor = vColor;
+	}
+	</script>
+
+  <script id="fragment-shader" type="x-shader/x-fragment">
+	precision mediump float;
+	varying vec4 fColor;
+	void main(){
+		gl_FragColor = fColor;
+	}
+	</script>
+
+  <script type="text/javascript" src="../js/common/webgl-utils.js"></script>
+  <script type="text/javascript" src="../js/common/initShaders.js"></script>
+  <script type="text/javascript" src="../js/common/gl-Matrix.js"></script>
+  <link rel="stylesheet" href="../frame/layui/css/layui.css" media="all">
+
+  <script type="text/javascript" src="../js/ch02/Lab02-b.js"></script>
+</head>
+
+<body>
+  <h2>Sierpinski Gasket in 3D</h2>
+  <div style="display: flex;">
+    <div>
+      <canvas id="gl-canvas" width="512" height="512">你的浏览器不支持HTML5 canvas元素</canvas>
+    </div>
+    <div id="slideTest1" class="demo-slider" style="margin-top: 100px; width: 500px;"></div>
+  </div>
+
+  <script src="../frame/layui/layui.js" charset="utf-8"></script>
+  <script>
+    layui.use('slider', function () {
+      var slider = layui.slider;
+      var num = 7;
+
+      initTriangles(num);
+      slider.render({
+        elem: '#slideTest1'
+        , value: 7
+        , min: 0
+        , max: 7
+        , step: 1
+        , setTips: function (value) {
+          return '剖分' + value + '层';
+        }
+        , input: true
+        , change: function (value) {
+          num = value;
+          initTriangles(num);
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
