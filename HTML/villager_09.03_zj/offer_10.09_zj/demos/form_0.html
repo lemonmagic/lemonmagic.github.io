@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>流出申请</title>
+  <link rel="stylesheet" href="../frame/layui/css/layui.css">
+  <link rel="stylesheet" href="../frame/bootstrap-3.4.1-dist/css/bootstrap.min.css">
+</head>
+
+<body>
+  <!-- 导航栏 -->
+  <div class="nav-1">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Blow</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                aria-expanded="false">土地流转<span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#">政策公开</a></li>
+                <li><a href="./土地评估.html">土地评估</a></li>
+                <li><a href="./土地转让.html">土地转让</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="./我要买地.html">我要买地</a></li>
+                <li role="separator" class="divider"></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                aria-expanded="false">农产助销<span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#"></a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                aria-expanded="false">物流查询<span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#"></a></li>
+              </ul>
+            </li>
+            <li><a href="#">补贴申请</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                aria-expanded="false">乡村医疗<span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#"></a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                aria-expanded="false">招工求职<span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#"></a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                aria-expanded="false">举报投诉<span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#"></a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="navbar-form navbar-left">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">查询</button>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                aria-expanded="false">我的<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">个人中心</a></li>
+                <li><a href="#">修改信息</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">退出登录</a></li>
+                <li role="separator" class="divider"></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  </div>
+
+  <!-- 表单 -->
+  <form id="form1" class="layui-form layui-form-pane" action="" style="text-align: center;">
+    <div class="layui-form-item">
+      <label class="layui-form-label">姓名</label>
+      <div class="layui-input-block">
+        <input type="text" name="title" required lay-verify="required" placeholder="请输入姓名" autocomplete="off"
+          class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">住址</label>
+      <div class="layui-input-block">
+        <input type="text" name="title" required lay-verify="required" placeholder="请输入住址" autocomplete="off"
+          class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">联系电话</label>
+      <div class="layui-input-block">
+        <input type="tel" name="phone" lay-verify="required|phone" placeholder="请输入手机号码" autocomplete="off"
+          class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">身份证号码</label>
+      <div class="layui-input-block">
+        <input type="text" name="identity" lay-verify="identity" placeholder="请输入身份证号" autocomplete="off"
+          class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">经营证书号</label>
+      <div class="layui-input-block">
+        <input type="text" name="title" required lay-verify="required" placeholder="请输入证书号" autocomplete="off"
+          class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">土地编号</label>
+      <div class="layui-input-block">
+        <input type="text" name="title" required lay-verify="required" placeholder="请输入土地编号" autocomplete="off"
+          class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">土地性质</label>
+      <div class="layui-input-block">
+        <select name="city" lay-verify="required">
+          <option value="0">耕地</option>
+          <option value="1">园地</option>
+          <option value="2">林地</option>
+          <option value="3">草地</option>
+          <option value="4">农田水利用地</option>
+        </select>
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">户主</label>
+      <div class="layui-input-block">
+        <input type="text" name="title" required lay-verify="required" placeholder="请输入户主姓名" autocomplete="off"
+          class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">面积</label>
+      <div class="layui-input-block">
+        <input type="text" name="title" required lay-verify="required" placeholder="请输入面积（单位为亩）" autocomplete="off"
+          class="layui-input">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <div class="layui-inline">
+        <label class="layui-form-label">价格</label>
+        <div class="layui-input-inline" style="width: 100px;">
+          <input type="text" name="price_min" placeholder="￥" autocomplete="off" class="layui-input">
+        </div>
+        <div class="layui-form-mid">-</div>
+        <div class="layui-input-inline" style="width: 100px;">
+          <input type="text" name="price_max" placeholder="￥" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+    </div>
+    <div class="layui-form">
+      <div class="layui-form-item">
+        <div class="layui-inline">
+          <label class="layui-form-label">日期范围</label>
+          <div class="layui-inline" id="test6">
+            <div class="layui-input-inline">
+              <input type="text" autocomplete="off" id="test-startDate-1" class="layui-input" placeholder="开始日期">
+            </div>
+            <div class="layui-form-mid">-</div>
+            <div class="layui-input-inline">
+              <input type="text" autocomplete="off" id="test-endDate-1" class="layui-input" placeholder="结束日期">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">接受安排</label>
+      <div class="layui-input-block">
+        <input type="radio" name="sex" value="是" title="是">
+        <input type="radio" name="sex" value="否" title="否" checked>
+      </div>
+    </div>
+    <div class="layui-form-item" style="float: left;">
+      <button type="button" class="layui-btn" id="test1">
+        <i class="layui-icon">&#xe67c;</i>上传支撑材料图片
+      </button>
+    </div>
+    <div class="layui-form-item layui-form-text">
+      <label class="layui-form-label">备注</label>
+      <div class="layui-input-block">
+        <textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <div style="text-align: center;">
+        <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+        <!-- <button type="reset" class="layui-btn layui-btn-primary">重置</button> -->
+      </div>
+    </div>
+  </form>
+
+  <script src="../frame/layui/layui.js" charset="utf-8"></script>
+  <script src="../frame/jquery-3.6.0.min.js"></script>
+  <script src="../frame/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+  <!-- 表单JS -->
+  <script>
+    layui.use(['form', 'layedit', 'laydate'], function () {
+      var form = layui.form
+        , layer = layui.layer
+        , layedit = layui.layedit
+        , laydate = layui.laydate;
+
+      //日期
+      laydate.render({
+        elem: '#date'
+      });
+      laydate.render({
+        elem: '#date1'
+      });
+
+      //创建一个编辑器
+      var editIndex = layedit.build('LAY_demo_editor');
+
+      //自定义验证规则
+      form.verify({
+        title: function (value) {
+          if (value.length < 5) {
+            return '标题至少得5个字符啊';
+          }
+        }
+        , pass: [
+          /^[\S]{6,12}$/
+          , '密码必须6到12位，且不能出现空格'
+        ]
+        , content: function (value) {
+          layedit.sync(editIndex);
+        }
+      });
+
+      //监听指定开关
+      form.on('switch(switchTest)', function (data) {
+        layer.msg('开关checked：' + (this.checked ? 'true' : 'false'), {
+          offset: '6px'
+        });
+        layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
+      });
+
+      //监听提交
+      form.on('submit(demo1)', function (data) {
+        layer.alert(JSON.stringify(data.field), {
+          title: '最终的提交信息'
+        })
+        return false;
+      });
+
+      //表单赋值
+      layui.$('#LAY-component-form-setval').on('click', function () {
+        form.val('example', {
+          "username": "贤心" // "name": "value"
+          , "password": "123456"
+          , "interest": 1
+          , "like[write]": true //复选框选中状态
+          , "close": true //开关状态
+          , "sex": "女"
+          , "desc": "我爱 layui"
+        });
+      });
+
+      //表单取值
+      layui.$('#LAY-component-form-getval').on('click', function () {
+        var data = form.val('example');
+        alert(JSON.stringify(data));
+      });
+
+    });
+  </script>
+
+  <!-- 日期范围JS -->
+  <script>
+    layui.use('laydate', function () {
+      var laydate = layui.laydate;
+
+      //常规用法
+      laydate.render({
+        elem: '#test1'
+      });
+
+      //国际版
+      laydate.render({
+        elem: '#test1-1'
+        , lang: 'en'
+      });
+
+      //年选择器
+      laydate.render({
+        elem: '#test2'
+        , type: 'year'
+      });
+
+      //年月选择器
+      laydate.render({
+        elem: '#test3'
+        , type: 'month'
+      });
+
+      //时间选择器
+      laydate.render({
+        elem: '#test4'
+        , type: 'time'
+      });
+
+      //日期时间选择器
+      laydate.render({
+        elem: '#test5'
+        , type: 'datetime'
+      });
+
+      //日期范围
+      laydate.render({
+        elem: '#test6'
+        //设置开始日期、日期日期的 input 选择器
+        //数组格式为 2.6.6 开始新增，之前版本直接配置 true 或任意分割字符即可
+        , range: ['#test-startDate-1', '#test-endDate-1']
+      });
+
+      //年范围
+      laydate.render({
+        elem: '#test7'
+        , type: 'year'
+        , range: true
+      });
+
+      //年月范围
+      laydate.render({
+        elem: '#test8'
+        , type: 'month'
+        , range: true
+      });
+
+      //时间范围
+      laydate.render({
+        elem: '#test9'
+        , type: 'time'
+        , range: true
+      });
+
+      //日期时间范围
+      laydate.render({
+        elem: '#test10'
+        , type: 'datetime'
+        , range: true
+      });
+
+      //自定义格式
+      laydate.render({
+        elem: '#test11'
+        , format: 'yyyy年MM月dd日'
+      });
+      laydate.render({
+        elem: '#test12'
+        , format: 'dd/MM/yyyy'
+      });
+      laydate.render({
+        elem: '#test13'
+        , format: 'yyyyMMdd'
+      });
+      laydate.render({
+        elem: '#test14'
+        , type: 'time'
+        , format: 'H点m分'
+      });
+      laydate.render({
+        elem: '#test15'
+        , type: 'month'
+        , range: '~'
+        , format: 'yyyy-MM'
+      });
+      laydate.render({
+        elem: '#test16'
+        , type: 'datetime'
+        , range: '到'
+        , format: 'yyyy年M月d日H时m分s秒'
+      });
+
+      //开启公历节日
+      laydate.render({
+        elem: '#test17'
+        , calendar: true
+      });
+
+      //自定义重要日
+      laydate.render({
+        elem: '#test18'
+        , mark: {
+          '0-10-14': '生日'
+          , '0-12-31': '跨年' //每年的日期
+          , '0-0-10': '工资' //每月某天
+          , '0-0-15': '月中'
+          , '2017-8-15': '' //如果为空字符，则默认显示数字+徽章
+          , '2099-10-14': '呵呵'
+        }
+        , done: function (value, date) {
+          if (date.year === 2017 && date.month === 8 && date.date === 15) { //点击2017年8月15日，弹出提示语
+            layer.msg('这一天是：中国人民抗日战争胜利72周年');
+          }
+        }
+      });
+
+      //限定可选日期
+      var ins22 = laydate.render({
+        elem: '#test-limit1'
+        , min: '2016-10-14'
+        , max: '2080-10-14'
+        , ready: function () {
+          ins22.hint('日期可选值设定在 <br> 2016-10-14 到 2080-10-14');
+        }
+      });
+
+      //前后若干天可选，这里以7天为例
+      laydate.render({
+        elem: '#test-limit2'
+        , min: -7
+        , max: 7
+      });
+
+      //限定可选时间
+      laydate.render({
+        elem: '#test-limit3'
+        , type: 'time'
+        , min: '09:30:00'
+        , max: '17:30:00'
+        , btns: ['clear', 'confirm']
+      });
+
+      //同时绑定多个
+      lay('.test-item').each(function () {
+        laydate.render({
+          elem: this
+          , trigger: 'click'
+        });
+      });
+
+      //初始赋值
+      laydate.render({
+        elem: '#test19'
+        , value: '1989-10-14'
+        , isInitValue: true
+      });
+
+      //选中后的回调
+      laydate.render({
+        elem: '#test20'
+        , done: function (value, date) {
+          layer.alert('你选择的日期是：' + value + '<br>获得的对象是' + JSON.stringify(date));
+        }
+      });
+
+      //日期切换的回调
+      laydate.render({
+        elem: '#test21'
+        , change: function (value, date) {
+          layer.msg('你选择的日期是：' + value + '<br><br>获得的对象是' + JSON.stringify(date));
+        }
+      });
+      //不出现底部栏
+      laydate.render({
+        elem: '#test22'
+        , showBottom: false
+      });
+
+      //只出现确定按钮
+      laydate.render({
+        elem: '#test23'
+        , btns: ['confirm']
+      });
+
+      //自定义事件
+      laydate.render({
+        elem: '#test24'
+        , trigger: 'mousedown'
+      });
+
+      //点我触发
+      laydate.render({
+        elem: '#test25'
+        , eventElem: '#test25-1'
+        , trigger: 'click'
+      });
+
+      //双击我触发
+      lay('#test26-1').on('dblclick', function () {
+        laydate.render({
+          elem: '#test26'
+          , show: true
+          , closeStop: '#test26-1'
+        });
+      });
+
+      //日期只读
+      laydate.render({
+        elem: '#test27'
+        , trigger: 'click'
+      });
+
+      //非input元素
+      laydate.render({
+        elem: '#test28'
+      });
+
+      //墨绿主题
+      laydate.render({
+        elem: '#test29'
+        , theme: 'molv'
+      });
+
+      //自定义颜色
+      laydate.render({
+        elem: '#test30'
+        , theme: '#393D49'
+      });
+
+      //格子主题
+      laydate.render({
+        elem: '#test31'
+        , theme: 'grid'
+      });
+
+
+      //直接嵌套显示
+      laydate.render({
+        elem: '#test-n1'
+        , position: 'static'
+      });
+      laydate.render({
+        elem: '#test-n2'
+        , position: 'static'
+        , lang: 'en'
+      });
+      laydate.render({
+        elem: '#test-n3'
+        , type: 'month'
+        , position: 'static'
+      });
+      laydate.render({
+        elem: '#test-n4'
+        , type: 'time'
+        , position: 'static'
+      });
+    });
+  </script>
+
+  <!-- 文件上传JS -->
+  <script>
+    layui.use(['upload', 'element', 'layer'], function () {
+      var $ = layui.jquery
+        , upload = layui.upload
+        , element = layui.element
+        , layer = layui.layer;
+
+      //常规使用 - 普通图片上传
+      var uploadInst = upload.render({
+        elem: '#test1'
+        , url: 'https://httpbin.org/post' //此处用的是第三方的 http 请求演示，实际使用时改成您自己的上传接口即可。
+        , before: function (obj) {
+          //预读本地文件示例，不支持ie8
+          obj.preview(function (index, file, result) {
+            $('#demo1').attr('src', result); //图片链接（base64）
+          });
+
+          element.progress('demo', '0%'); //进度条复位
+          layer.msg('上传中', { icon: 16, time: 0 });
+        }
+        , done: function (res) {
+          //如果上传失败
+          if (res.code > 0) {
+            return layer.msg('上传失败');
+          }
+          //上传成功的一些操作
+          //……
+          $('#demoText').html(''); //置空上传失败的状态
+        }
+        , error: function () {
+          //演示失败状态，并实现重传
+          var demoText = $('#demoText');
+          demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-xs demo-reload">重试</a>');
+          demoText.find('.demo-reload').on('click', function () {
+            uploadInst.upload();
+          });
+        }
+        //进度条
+        , progress: function (n, elem, e) {
+          element.progress('demo', n + '%'); //可配合 layui 进度条元素使用
+          if (n == 100) {
+            layer.msg('上传完毕', { icon: 1 });
+          }
+        }
+      });
+
+      //演示多文件列表
+      var uploadListIns = upload.render({
+        elem: '#testList'
+        , elemList: $('#demoList') //列表元素对象
+        , url: 'https://httpbin.org/post' //此处用的是第三方的 http 请求演示，实际使用时改成您自己的上传接口即可。
+        , accept: 'file'
+        , multiple: true
+        , number: 3
+        , auto: false
+        , bindAction: '#testListAction'
+        , choose: function (obj) {
+          var that = this;
+          var files = this.files = obj.pushFile(); //将每次选择的文件追加到文件队列
+          //读取本地文件
+          obj.preview(function (index, file, result) {
+            var tr = $(['<tr id="upload-' + index + '">'
+              , '<td>' + file.name + '</td>'
+              , '<td>' + (file.size / 1014).toFixed(1) + 'kb</td>'
+              , '<td><div class="layui-progress" lay-filter="progress-demo-' + index + '"><div class="layui-progress-bar" lay-percent=""></div></div></td>'
+              , '<td>'
+              , '<button class="layui-btn layui-btn-xs demo-reload layui-hide">重传</button>'
+              , '<button class="layui-btn layui-btn-xs layui-btn-danger demo-delete">删除</button>'
+              , '</td>'
+              , '</tr>'].join(''));
+
+            //单个重传
+            tr.find('.demo-reload').on('click', function () {
+              obj.upload(index, file);
+            });
+
+            //删除
+            tr.find('.demo-delete').on('click', function () {
+              delete files[index]; //删除对应的文件
+              tr.remove();
+              uploadListIns.config.elem.next()[0].value = ''; //清空 input file 值，以免删除后出现同名文件不可选
+            });
+
+            that.elemList.append(tr);
+            element.render('progress'); //渲染新加的进度条组件
+          });
+        }
+        , done: function (res, index, upload) { //成功的回调
+          var that = this;
+          //if(res.code == 0){ //上传成功
+          var tr = that.elemList.find('tr#upload-' + index)
+            , tds = tr.children();
+          tds.eq(3).html(''); //清空操作
+          delete this.files[index]; //删除文件队列已经上传成功的文件
+          return;
+          //}
+          this.error(index, upload);
+        }
+        , allDone: function (obj) { //多文件上传完毕后的状态回调
+          console.log(obj)
+        }
+        , error: function (index, upload) { //错误回调
+          var that = this;
+          var tr = that.elemList.find('tr#upload-' + index)
+            , tds = tr.children();
+          tds.eq(3).find('.demo-reload').removeClass('layui-hide'); //显示重传
+        }
+        , progress: function (n, elem, e, index) { //注意：index 参数为 layui 2.6.6 新增
+          element.progress('progress-demo-' + index, n + '%'); //执行进度条。n 即为返回的进度百分比
+        }
+      });
+
+      //多图片上传
+      upload.render({
+        elem: '#test2'
+        , url: '' //此处配置你自己的上传接口即可
+        , multiple: true
+        , before: function (obj) {
+          //预读本地文件示例，不支持ie8
+          obj.preview(function (index, file, result) {
+            $('#demo2').append('<img src="' + result + '" alt="' + file.name + '" class="layui-upload-img">')
+          });
+        }
+        , done: function (res) {
+          //上传完毕
+        }
+      });
+
+      //指定允许上传的文件类型
+      upload.render({
+        elem: '#test3'
+        , url: '' //此处配置你自己的上传接口即可
+        , accept: 'file' //普通文件
+        , done: function (res) {
+          layer.msg('上传成功');
+          console.log(res);
+        }
+      });
+      upload.render({ //允许上传的文件后缀
+        elem: '#test4'
+        , url: '' //此处配置你自己的上传接口即可
+        , accept: 'file' //普通文件
+        , exts: 'zip|rar|7z' //只允许上传压缩文件
+        , done: function (res) {
+          layer.msg('上传成功');
+          console.log(res)
+        }
+      });
+      upload.render({
+        elem: '#test5'
+        , url: '' //此处配置你自己的上传接口即可
+        , accept: 'video' //视频
+        , done: function (res) {
+          layer.msg('上传成功');
+          console.log(res)
+        }
+      });
+      upload.render({
+        elem: '#test6'
+        , url: '' //此处配置你自己的上传接口即可
+        , accept: 'audio' //音频
+        , done: function (res) {
+          layer.msg('上传成功');
+          console.log(res)
+        }
+      });
+
+      //设定文件大小限制
+      upload.render({
+        elem: '#test7'
+        , url: '' //此处配置你自己的上传接口即可
+        , size: 60 //限制文件大小，单位 KB
+        , done: function (res) {
+          layer.msg('上传成功');
+          console.log(res)
+        }
+      });
+
+      //同时绑定多个元素，并将属性设定在元素上
+      upload.render({
+        elem: '.demoMore'
+        , before: function () {
+          layer.tips('接口地址：' + this.url, this.item, { tips: 1 });
+        }
+        , done: function (res, index, upload) {
+          var item = this.item;
+          console.log(item); //获取当前触发上传的元素，layui 2.1.0 新增
+        }
+      })
+
+      //选完文件后不自动上传
+      upload.render({
+        elem: '#test8'
+        , url: '' //此处配置你自己的上传接口即可
+        , auto: false
+        //,multiple: true
+        , bindAction: '#test9'
+        , done: function (res) {
+          layer.msg('上传成功');
+          console.log(res)
+        }
+      });
+
+      //拖拽上传
+      upload.render({
+        elem: '#test10'
+        , url: 'https://httpbin.org/post' //此处用的是第三方的 http 请求演示，实际使用时改成您自己的上传接口即可。
+        , done: function (res) {
+          layer.msg('上传成功');
+          layui.$('#uploadDemoView').removeClass('layui-hide').find('img').attr('src', res.files.file);
+          console.log(res)
+        }
+      });
+
+      //绑定原始文件域
+      upload.render({
+        elem: '#test20'
+        , url: '' //此处配置你自己的上传接口即可
+        , done: function (res) {
+          layer.msg('上传成功');
+          console.log(res)
+        }
+      });
+
+    });
+  </script>
+
+</body>
+
+</html>

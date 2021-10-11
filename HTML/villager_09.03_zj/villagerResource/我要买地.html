@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>我要买地</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="./layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="./bootstrap-3.4.1-dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <style>
+        #text {
+            width: 100%;
+            height: 70px;
+            font-size: 20px;
+            font-family: 微软雅黑;
+            text-align: center;
+            line-height: 40px;
+            background-color: #1f2020;
+            opacity: 0.8;
+            color: #ffffff;
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+        }
+
+        .btndiv{
+            text-align: right;
+        }
+        .btndiv div{
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    </style>
+
+    <div class="nav-1">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Blow</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">土地流转<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">政策公开</a></li>
+                                <li><a href="./土地评估.html">土地评估</a></li>
+                                <li><a href="./土地转让.html">土地转让</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="./我要买地.html">我要买地</a></li>
+                                <li role="separator" class="divider"></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">农产助销<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#"></a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">物流查询<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#"></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">补贴申请</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">乡村医疗<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#"></a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">招工求职<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#"></a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">举报投诉<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#"></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="navbar-form navbar-left">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">查询</button>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">我的<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">个人中心</a></li>
+                                <li><a href="#">修改信息</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">退出登录</a></li>
+                                <li role="separator" class="divider"></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </div>
+    <div class="contain">
+        <div>
+            <video autoplay="true" loop="loop">
+                video
+            </video>
+        </div>
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md12">
+                <div class="layui-panel">
+                    <div style="padding: 30px; height: 300px;">
+                        <div style="font-size: 36px;">
+                            我的土地1 <br>
+                            <span style="font-size: 13px;">土地相关数据</span>
+                        </div>
+                        <div class="btndiv">
+                            <div>
+                                <button>我要买地</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-md12">
+                <div class="layui-panel">
+                    <div style="padding: 30px; height: 300px;">
+                        <div style="font-size: 36px;">
+                            我的土地2 <br>
+                            <span style="font-size: 13px;">土地相关数据</span>
+                        </div>
+                        <div class="btndiv">
+                            <div>
+                                <button>我要买地</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-col-xs12 layui-col-md12">
+        <p style="text-align: center;">Blow 208</p>
+    </div>
+    <script src="./layui/layui.js" charset="utf-8"></script>
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script src="./bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+    <script>
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>流出申请</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="../frame/layui/css/layui.css" media="all">
+  <link rel="stylesheet" href="../frame/bootstrap-3.4.1-dist/css/bootstrap.min.css">
+</head>
+
+<body>
+  <!-- 导航栏 -->
+  <div class="nav-1">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Blow</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                aria-expanded="false">土地流转<span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#">政策公开</a></li>
+                <li><a href="./土地评估.html">土地评估</a></li>
+                <li><a href="./土地转让.html">土地转让</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="./我要买地.html">我要买地</a></li>
+                <li role="separator" class="divider"></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                aria-expanded="false">农产助销<span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#"></a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                aria-expanded="false">物流查询<span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#"></a></li>
+              </ul>
+            </li>
+            <li><a href="#">补贴申请</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                aria-expanded="false">乡村医疗<span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#"></a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                aria-expanded="false">招工求职<span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#"></a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                aria-expanded="false">举报投诉<span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="#"></a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="navbar-form navbar-left">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">查询</button>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                aria-expanded="false">我的<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">个人中心</a></li>
+                <li><a href="#">修改信息</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">退出登录</a></li>
+                <li role="separator" class="divider"></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  </div>
+
+  <!-- 审批进度 -->
+  <div>
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+      <legend>审批进度</legend>
+    </fieldset>
+
+    <div class="layui-progress layui-progress-big" lay-showpercent="true" style="margin-right: 10px; margin-left: 5px;">
+      <div class="layui-progress-bar" lay-percent="100%"></div>
+    </div>
+
+    <ul class="layui-timeline">
+      <li class="layui-timeline-item">
+        <i class="layui-icon layui-timeline-axis"></i>
+        <div class="layui-timeline-content layui-text">
+          <h3 class="layui-timeline-title">10月11日</h3>
+          <p style="color: #007bff; font-size: larger;"><strong>审批通过！</strong></p>
+          <ul>
+            <li>价格已核实，通过审批</li>
+            <li>面积已核实，通过审批</li>
+            <li>土地性质已核实，通过审批</li>
+            <li>经营权证书号已核实，通过审批</li>
+          </ul>
+        </div>
+      </li>
+      <li class="layui-timeline-item">
+        <i class="layui-icon layui-timeline-axis"></i>
+        <div class="layui-timeline-content layui-text">
+          <h3 class="layui-timeline-title">10月10日</h3>
+          <p>正在核实经营权证书号，请耐心等待...</p>
+          <ul>
+            <li>期限已核实，通过审批</li>
+            <li>户主已核实，通过审批</li>
+            <li>土地编号已核实，通过审批</li>
+          </ul>
+        </div>
+      </li>
+      <li class="layui-timeline-item">
+        <i class="layui-icon layui-timeline-axis"></i>
+        <div class="layui-timeline-content layui-text">
+          <h3 class="layui-timeline-title">10月09日</h3>
+          <p>正在审批经营权证书号，请耐心等待...</p>
+          <ul>
+            <li>身份证号码已核实，通过审批</li>
+            <li>联系电话已核实，通过审批</li>
+            <li>家庭住址已核实，通过审批</li>
+            <li>姓名已核实，通过审批</li>
+          </ul>
+        </div>
+      </li>
+    <li class="layui-timeline-item">
+      <i class="layui-icon layui-timeline-axis"></i>
+      <div class="layui-timeline-content layui-text">
+        <h3 class="layui-timeline-title">10月08日</h3>
+        <p>已成功申请，等待审批中...</p>
+      </div>
+    </li>
+    <li class="layui-timeline-item">
+      <i class="layui-icon layui-timeline-axis"></i>
+      <div class="layui-timeline-content layui-text">
+        <div class="layui-timeline-title">过去</div>
+      </div>
+    </li>
+    </ul>
+  </div>
+
+  <script src="../frame/layui/layui.js" charset="utf-8"></script>
+  <script src="../frame/jquery-3.6.0.min.js"></script>
+  <script src="../frame/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+  <!-- 进度条JS -->
+  <script>
+    layui.use('element', function () {
+      var $ = layui.jquery
+        , element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+
+      //触发事件
+      var active = {
+        setPercent: function () {
+          //设置50%进度
+          element.progress('demo', '50%')
+        }
+        , loading: function (othis) {
+          var DISABLED = 'layui-btn-disabled';
+          if (othis.hasClass(DISABLED)) return;
+
+          //模拟loading
+          var n = 0, timer = setInterval(function () {
+            n = n + Math.random() * 10 | 0;
+            if (n > 100) {
+              n = 100;
+              clearInterval(timer);
+              othis.removeClass(DISABLED);
+            }
+            element.progress('demo', n + '%');
+          }, 300 + Math.random() * 1000);
+
+          othis.addClass(DISABLED);
+        }
+      };
+
+      $('.site-demo-active').on('click', function () {
+        var othis = $(this), type = $(this).data('type');
+        active[type] ? active[type].call(this, othis) : '';
+      });
+    });
+  </script>
+
+</body>
+
+</html>
