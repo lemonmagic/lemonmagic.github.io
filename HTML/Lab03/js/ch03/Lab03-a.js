@@ -25,6 +25,7 @@ function changeSqu(){
 function changeDir(){
 	clearTimeout(time);
 	direction *= -1;
+	renderSquare();
 }
 
 function fast(){
