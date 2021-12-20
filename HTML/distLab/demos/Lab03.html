@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="../frame/layui/css/layui.css" media="all">
+  <title>Lab03</title>
+  <script id="rot-v-shader-A" type="x-shader/x-vertex">
+    attribute vec4 vPosition;
+    uniform float theta;
+    void main()
+    {
+        float u = cos( theta );
+        float v = sin( theta );
+        gl_Position.x = vPosition.x * u - vPosition.y * v;
+        gl_Position.y = vPosition.x * v + vPosition.y * u;
+        gl_Position.z = 0.0;
+        gl_Position.w = 1.0;
+    }
+  </script>
+  <script id="rot-f-shader-A" type="x-shader/x-fragment">
+    precision mediump float;
+    void main()
+    {
+        gl_FragColor = vec4( 1.0, 0.0, 0.0, 1.0 );
+    }
+  </script>
+
+  <script type="text/javascript" src="../js/common/webgl-utils.js"></script>
+  <script type="text/javascript" src="../js/common/initShaders.js"></script>
+  <script type="text/javascript" src="../js/common/gl-matrix.js"></script>
+
+  <script type="text/javascript" src="../js/ch/Lab03.js"></script>
+  <style>
+    fieldset {
+      display: inline;
+      height: 520px;
+    }
+
+    #control {
+      width: 200px;
+    }
+  </style>
+</head>
+
+<body onload="initRotSquare()">
+  <fieldset id="canvas">
+    <legend>Lab03-a</legend>
+    <canvas id="rot-canvas-A" width="512" height="512">你的浏览器不支持HTML5 canvas元素</canvas>
+  </fieldset>
+  <fieldset id="control">
+    <legend>转动控制</legend>
+    <div class="layui-btn-container">
+      <button type="button" class="layui-btn" style="margin-bottom: 10px;" onclick="changeTri()">三角形</button><br>
+      <button type="button" class="layui-btn" style="margin-bottom: 10px;" onclick="changeSqu()">四边形</button><br>
+      <button type="button" class="layui-btn" style="margin-bottom: 10px;" onclick="changeDir()">换方向</button><br>
+      <button class="layui-btn layui-btn-primary" id="hover1">
+        按钮
+        <i class="layui-icon layui-icon-more-vertical layui-font-12"></i>
+      </button>
+    </div>
+    <div id="slideTest14" style="margin-top: 45px; display: inline-block;"></div>
+  </fieldset>
+
+  <script src="../frame/layui/layui.js"></script>
+  <script>
+    layui.use(['dropdown', 'util', 'layer', 'table'], function () {
+      var dropdown = layui.dropdown
+        , util = layui.util
+        , layer = layui.layer
+        , table = layui.table
+        , $ = layui.jquery;
+      dropdown.render({
+        elem: '#hover1'
+        , trigger: 'hover'
+        , data: [{
+          title: '换个方向'
+          , id: 100
+        }, {
+          title: '再快一点'
+          , id: 101
+        }, {
+          title: '再慢一点'
+          , id: 102
+        }],
+        click: function (data, othis) {
+          var elem = $(this.elem)
+            , listId = elem.data('id');
+          if (data.id == 100) {
+            changeDir();
+            renderA();
+          }
+          else if (data.id == 101) {
+            fast();
+            renderA();
+          }
+          else if (data.id == 102) {
+            slow();
+            renderA();
+          }
+        }
+      });
+    });
+
+    layui.use('slider', function () {
+      var $ = layui.$
+        , slider = layui.slider;
+      slider.render({
+        elem: '#slideTest14'
+        , value: 0
+        , input: true
+        , type: 'vertical'
+        , setTips: function (value) { //自定义提示文本
+          return '当前速度：' + value;
+        }
+        , change: function (value) {
+          var num = 200 - value;
+          speed(num);
+          renderA();
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

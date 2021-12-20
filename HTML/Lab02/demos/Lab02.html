@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <title>Lab02</title>
+  <script id="vertex-shader-A" type="x-shader/x-vertex">
+	attribute vec4 vPosition;
+	void main(){
+		gl_Position = vPosition;
+	}
+	</script>
+  <script id="fragment-shader-A" type="x-shader/x-fragment">
+	precision mediump float;
+	void main(){
+		gl_FragColor = vec4( 1.0, 0.0, 0.0, 1.0 );
+	}
+	</script>
+
+  <script id="vertex-shader-B" type="x-shader/x-vertex">
+    attribute vec3 vPosition;
+    attribute vec4 vColor;
+    varying vec4 fColor;
+  
+    void main(){
+      gl_Position = vec4( vPosition, 1.0 );
+      fColor = vColor;
+    }
+  </script>
+  <script id="fragment-shader-B" type="x-shader/x-fragment">
+    precision mediump float;
+    varying vec4 fColor;
+    void main(){
+      gl_FragColor = fColor;
+    }
+  </script>
+
+  <script id="vertex-shader-C" type="x-shader/x-vertex">
+    attribute vec4 vPosition;
+    void main(){
+      gl_Position = vPosition;
+    }
+  </script>
+  <script id="fragment-shader-C" type="x-shader/x-fragment">
+    precision mediump float;
+    void main(){
+      gl_FragColor = vec4( 1.0, 0.0, 0.0, 1.0 );
+    }
+  </script>
+
+  <script id="rot-v-shader-D" type="x-shader/x-vertex">
+    attribute vec4 vPosition;
+    uniform float theta;
+  
+    void main()
+    {
+      float u = cos( theta );
+      float v = sin( theta );
+  
+      gl_Position.x = vPosition.x * u - vPosition.y * v;
+      gl_Position.y = vPosition.x * v + vPosition.y * u;
+      gl_Position.z = 0.0;
+      gl_Position.w = 1.0;
+    }
+  </script>
+  <script id="rot-f-shader-D" type="x-shader/x-fragment">
+    precision mediump float;
+  
+    void main()
+    {
+      gl_FragColor = vec4( 1.0, 0.0, 0.0, 1.0 );
+    }
+  </script>
+
+  <script id="rot-v-shader-E" type="x-shader/x-vertex">
+    attribute vec4 vPosition;
+    uniform float theta;
+  
+    void main()
+    {
+      float d = sqrt(vPosition.x*vPosition.x+vPosition.y*vPosition.y);
+      float u = cos( d*theta );
+      float v = sin( d*theta );
+  
+      gl_Position.x = vPosition.x * u - vPosition.y * v;
+      gl_Position.y = vPosition.x * v + vPosition.y * u;
+      gl_Position.z = 0.0;
+      gl_Position.w = 1.0;
+    }
+  </script>
+  <script id="rot-f-shader-E" type="x-shader/x-fragment">
+    precision mediump float;
+  
+    void main()
+    {
+      gl_FragColor = vec4( 1.0, 0.0, 0.0, 1.0 );
+    }
+  </script>
+
+  <script type="text/javascript" src="../js/common/webgl-utils.js"></script>
+  <script type="text/javascript" src="../js/common/initShaders.js"></script>
+  <script type="text/javascript" src="../js/common/gl-matrix.js"></script>
+  <link rel="stylesheet" href="../frame/layui/css/layui.css" media="all">
+
+  <script type="text/javascript" src="../js/ch/Lab02.js"></script>
+</head>
+
+<body>
+  <div style="display: flex;">
+    <div style="width: 20%;">
+      <h2>Task A</h2>
+      <div>
+        <div>
+          <canvas id="gl-canvas-A" width="300" height="300">你的浏览器不支持HTML5 canvas元素</canvas>
+        </div>
+        <div id="slideTestA" class="demo-slider"
+          style="margin-left: 5px; margin-top: 20px; margin-bottom: 20px; width: 300px;"></div>
+      </div>
+    </div>
+    <div style="width: 20%;">
+      <h2>Task B</h2>
+      <div>
+        <div>
+          <canvas id="gl-canvas-B" width="300" height="300">你的浏览器不支持HTML5 canvas元素</canvas>
+        </div>
+        <div id="slideTestB" class="demo-slider"
+          style="margin-left: 5px; margin-top: 20px; margin-bottom: 20px; width: 300px;"></div>
+      </div>
+    </div>
+    <div style="width: 20%;">
+      <h2>Task C</h2>
+      <div>
+        <div>
+          <canvas id="gl-canvas-C" width="300" height="300">你的浏览器不支持HTML5 canvas元素</canvas>
+        </div>
+        <div id="slideTestC" class="demo-slider"
+          style="margin-left: 5px; margin-top: 20px; margin-bottom: 20px; width: 300px;"></div>
+      </div>
+    </div>
+    <div style="width: 20%;">
+      <h2>Task D</h2>
+      <div>
+        <div>
+          <canvas id="gl-canvas-D" width="300" height="300">你的浏览器不支持HTML5 canvas元素</canvas>
+        </div>
+        <div id="slideTestD" class="demo-slider"
+          style="margin-left: 5px; margin-top: 20px; margin-bottom: 20px; width: 300px;"></div>
+      </div>
+    </div>
+    <div style="width: 20%;">
+      <h2>Task E</h2>
+      <div>
+        <div>
+          <canvas id="gl-canvas-E" width="300" height="300">你的浏览器不支持HTML5 canvas元素</canvas>
+        </div>
+        <div id="slideTestE" class="demo-slider"
+          style="margin-left: 5px; margin-top: 20px; margin-bottom: 20px; width: 300px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../frame/layui/layui.js" charset="utf-8"></script>
+  <script>
+    layui.use('slider', function () {
+      var slider = layui.slider;
+      var num = 7;
+      var theta = 0.0;
+      initTrianglesA(num);
+      initTrianglesB(num);
+      initTrianglesC(num);
+      initTrianglesD(theta);
+      initTrianglesE(theta);
+      slider.render({
+        elem: '#slideTestA'
+        , value: 7
+        , min: 0
+        , max: 7
+        , step: 1
+        , setTips: function (value) {
+          return '剖分' + value + '层';
+        }
+        , input: true
+        , change: function (value) {
+          num = value;
+          initTrianglesA(num);
+        }
+      });
+      slider.render({
+        elem: '#slideTestB'
+        , value: 7
+        , min: 0
+        , max: 7
+        , step: 1
+        , setTips: function (value) {
+          return '剖分' + value + '层';
+        }
+        , input: true
+        , change: function (value) {
+          num = value;
+          initTrianglesB(num);
+        }
+      });
+      slider.render({
+        elem: '#slideTestC'
+        , value: 7
+        , min: 0
+        , max: 7
+        , step: 1
+        , setTips: function (value) {
+          return '剖分' + value + '层';
+        }
+        , input: true
+        , change: function (value) {
+          num = value;
+          initTrianglesC(num);
+        }
+      });
+      slider.render({
+        elem: '#slideTestD'
+        , value: 0
+        , min: 0
+        , max: 62
+        , step: 1
+        , setTips: function (value) {
+          return '旋转' + value + '';
+        }
+        , input: true
+        , change: function (value) {
+          theta = value/10;
+          initTrianglesD(theta);
+        }
+      });
+      slider.render({
+        elem: '#slideTestE'
+        , value: 0
+        , min: 0
+        , max: 62
+        , step: 1
+        , setTips: function (value) {
+          return '旋转' + value + '';
+        }
+        , input: true
+        , change: function (value) {
+          theta = value/10;
+          initTrianglesE(theta);
+        }
+      });
+    });
+    // layui.use('slider', function () {
+    //   var slider = layui.slider;
+    //   slider.render({
+    //     elem: '#slideTest2'
+    //     , value: 7
+    //     , min: 0
+    //     , max: 7
+    //     , step: 1
+    //     , setTips: function (value) {
+    //       return '剖分' + value + '层';
+    //     }
+    //     , input: true
+    //     , change: function (value) {
+    //     }
+    //   });
+    // });
+  </script>
+</body>
+
+</html>
