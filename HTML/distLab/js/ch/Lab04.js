@@ -1,5 +1,9 @@
 "use strict";
 
+const {
+    vec3, vec4, mat4
+} = glMatrix;
+
 var canvas;
 var gl;
 
@@ -10,16 +14,35 @@ var xAxis = 0;
 var yAxis = 1;
 var zAxis = 2;
 
-var axis = 0;
-var theta = [0, 0, 0];
-var dx = 0.0;
-var dy = 0.0;
-var dz = 0.0;
+var dxt = 0.0;
+var dyt = 0.0;
+var dzt = 0.0;
+var dxm = 0.0;
+var dym = 0.0;
+var dzm = 0.0;
+var dxs = 1.0;
+var dys = 1.0;
+var dzs = 1.0;
 
-var thetaLoc;
-var dxLoc;
-var dyLoc;
-var dzLoc;
+var near = -10;
+var far = 10;
+var radius = 6.0;
+var theta = 0.0;
+var phi = 0.0;
+var stept = 5.0 * Math.PI / 180.0;
+
+var left = -2.0;
+var right = 2.0;
+var ytop = 2.0;
+var bottom = -2.0;
+
+var modelViewMatrix, projectionMatrix;
+var modelViewMatrixLoc, projectionMatrixLoc;
+
+
+var eye;
+var at = vec3.fromValues(0.0, 0.0, 0.0);
+var up = vec3.fromValues(0.0, 1.0, 0.0);
 
 function initCube() {
     canvas = document.getElementById("rtcb-canvas-1");
@@ -56,37 +79,80 @@ function initCube() {
     gl.vertexAttribPointer(vPosition, 3, gl.FLOAT, false, 0, 0);
     gl.enableVertexAttribArray(vPosition);
 
-    thetaLoc = gl.getUniformLocation(program, "theta");
-    gl.uniform3fv(thetaLoc, theta);
-    gl.uniform1f(gl.getUniformLocation(program, "dx"), dx);
+    modelViewMatrixLoc = gl.getUniformLocation(program, "modelViewMatrix");
+    projectionMatrixLoc = gl.getUniformLocation(program, "projectionMatrix");
 
-    document.getElementById("xbutton").onclick = function () {
-        axis = xAxis;
-        theta[axis] += 0.1;
+    modelViewMatrix = mat4.create();
+    projectionMatrix = mat4.create();
+
+    document.getElementById("x+button").onclick = function () {
+        dxt += 0.1;
+    }
+    document.getElementById("y+button").onclick = function () {
+        dyt += 0.1;
+    }
+    document.getElementById("z+button").onclick = function () {
+        dzt += 0.1;
+    }
+    document.getElementById("x-button").onclick = function () {
+        dxt -= 0.1;
+    }
+    document.getElementById("y-button").onclick = function () {
+        dyt -= 0.1;
+    }
+    document.getElementById("z-button").onclick = function () {
+        dzt -= 0.1;
+    }
+    document.getElementById("x+tbutton").onclick = function () {
+        dxm += 0.1;
+    }
+    document.getElementById("y+tbutton").onclick = function () {
+        dym += 0.1;
+    }
+    document.getElementById("z+tbutton").onclick = function () {
+        dzm += 0.1;
+    }
+    document.getElementById("x-tbutton").onclick = function () {
+        dxm -= 0.1;
+    }
+    document.getElementById("y-tbutton").onclick = function () {
+        dym -= 0.1;
+    }
+    document.getElementById("z-tbutton").onclick = function () {
+        dzm -= 0.1;
+    }
+    document.getElementById("x+sbutton").onclick = function () {
+        dxs += 0.1;
+    }
+    document.getElementById("y+sbutton").onclick = function () {
+        dys += 0.1;
+    }
+    document.getElementById("z+sbutton").onclick = function () {
+        dzs += 0.1;
+    }
+    document.getElementById("x-sbutton").onclick = function () {
+        dxs -= 0.1;
+    }
+    document.getElementById("y-sbutton").onclick = function () {
+        dys -= 0.1;
+    }
+    document.getElementById("z-sbutton").onclick = function () {
+        dzs -= 0.1;
     }
 
-    document.getElementById("ybutton").onclick = function () {
-        axis = yAxis;
-        theta[axis] += 0.1;
-    }
-
-    document.getElementById("zbutton").onclick = function () {
-        axis = zAxis;
-        theta[axis] += 0.1;
-    }
     render();
 }
 
 function makeCube() {
     var vertices = [
-        glMatrix.vec4.fromValues(-0.1, -0.1, 0.1, 1.0),
-        glMatrix.vec4.fromValues(-0.1, 0.1, 0.1, 1.0),
-        glMatrix.vec4.fromValues(0.1, 0.1, 0.1, 1.0),
-        glMatrix.vec4.fromValues(0.1, -0.1, 0.1, 1.0),
+        glMatrix.vec4.fromValues(-0.1, -0.1,  0.1, 1.0),
+        glMatrix.vec4.fromValues(-0.1,  0.1,  0.1, 1.0),
+        glMatrix.vec4.fromValues( 0.1,  0.1,  0.1, 1.0),
+        glMatrix.vec4.fromValues( 0.1, -0.1,  0.1, 1.0),
         glMatrix.vec4.fromValues(-0.1, -0.1, -0.1, 1.0),
-        glMatrix.vec4.fromValues(-0.1, 0.1, -0.1, 1.0),
-        glMatrix.vec4.fromValues(0.1, 0.1, -0.1, 1.0),
-        glMatrix.vec4.fromValues(0.1, -0.1, -0.1, 1.0),
+        glMatrix.vec4.fromValues(-0.1,  0.1, -0.1, 1.0),
+        glMatrix.vec4.fromValues( 0.1,  0.1, -0.1, 1.0),
+        glMatrix.vec4.fromValues( 0.1, -0.1, -0.1, 1.0),
     ];
     var vertexColors = [
         glMatrix.vec4.fromValues(0.0, 0.0, 0.0, 1.0),
@@ -115,14 +181,22 @@ function makeCube() {
 
 function render() {
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+    eye = vec3.fromValues(
+        radius * Math.sin(theta) * Math.cos(phi),
+        radius * Math.sin(theta) * Math.sin(phi),
+        radius * Math.cos(theta)
+    );
+    mat4.lookAt(modelViewMatrix, eye, at, up);
+    mat4.scale(modelViewMatrix, modelViewMatrix, vec3.fromValues(dxs, dys, dzs))
+    mat4.translate(modelViewMatrix, modelViewMatrix, vec3.fromValues(dxm, dym, dzm));
+    mat4.rotateX(modelViewMatrix, modelViewMatrix, dxt);
+    mat4.rotateY(modelViewMatrix, modelViewMatrix, dyt);
+    mat4.rotateZ(modelViewMatrix, modelViewMatrix, dzt);
+    mat4.ortho(projectionMatrix, left, right, bottom, ytop, near, far);
 
-    // theta[axis] += 0.1;
-    gl.uniform3fv(thetaLoc, theta);
-    // gl.uniform3fv(dxLoc, dx);
-    // gl.uniform3fv(dyLoc, dy);
-    // gl.uniform3fv(dzLoc, dz);
+    gl.uniformMatrix4fv(modelViewMatrixLoc, false, new Float32Array(modelViewMatrix));
+    gl.uniformMatrix4fv(projectionMatrixLoc, false, new Float32Array(projectionMatrix));
 
     gl.drawArrays(gl.TRIANGLES, 0, points.length / 3);
-
     requestAnimFrame(render);
 }
