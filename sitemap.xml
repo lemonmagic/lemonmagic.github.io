@@ -107,14 +107,14 @@
   </url>
   
   <url>
-    <loc>https://lemonmagic.github.io/cn/Hexo/Hexo-Theme-LiveMyLife/</loc>
+    <loc>https://lemonmagic.github.io/en/Hexo/Hexo-Theme-LiveMyLife/</loc>
     
     <lastmod>2020-04-16</lastmod>
     
   </url>
   
   <url>
-    <loc>https://lemonmagic.github.io/en/Hexo/Hexo-Theme-LiveMyLife/</loc>
+    <loc>https://lemonmagic.github.io/cn/Hexo/Hexo-Theme-LiveMyLife/</loc>
     
     <lastmod>2020-04-16</lastmod>
     
@@ -130,43 +130,43 @@
 
   <url>
     <loc>https://lemonmagic.github.io/</loc>
-    <lastmod>2022-01-26</lastmod>
+    <lastmod>2022-01-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>https://lemonmagic.github.io/tags/Computer-Graphics/</loc>
-    <lastmod>2022-01-26</lastmod>
+    <loc>https://lemonmagic.github.io/tags/FWWB/</loc>
+    <lastmod>2022-01-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://lemonmagic.github.io/tags/FWWB/</loc>
-    <lastmod>2022-01-26</lastmod>
+    <loc>https://lemonmagic.github.io/tags/Computer-Graphics/</loc>
+    <lastmod>2022-01-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lemonmagic.github.io/tags/Hexo/</loc>
-    <lastmod>2022-01-26</lastmod>
+    <lastmod>2022-01-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lemonmagic.github.io/tags/Theme-LiveMyLife/</loc>
-    <lastmod>2022-01-26</lastmod>
+    <lastmod>2022-01-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lemonmagic.github.io/tags/Node-js/</loc>
-    <lastmod>2022-01-26</lastmod>
+    <lastmod>2022-01-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -174,29 +174,29 @@
 
   
   <url>
-    <loc>https://lemonmagic.github.io/categories/Computer-Graphics/</loc>
-    <lastmod>2022-01-26</lastmod>
+    <loc>https://lemonmagic.github.io/categories/FWWB/</loc>
+    <lastmod>2022-01-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://lemonmagic.github.io/categories/FWWB/</loc>
-    <lastmod>2022-01-26</lastmod>
+    <loc>https://lemonmagic.github.io/categories/Computer-Graphics/</loc>
+    <lastmod>2022-01-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lemonmagic.github.io/categories/Hexo/</loc>
-    <lastmod>2022-01-26</lastmod>
+    <lastmod>2022-01-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://lemonmagic.github.io/categories/Node-js/</loc>
-    <lastmod>2022-01-26</lastmod>
+    <lastmod>2022-01-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
